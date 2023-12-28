@@ -114,4 +114,4 @@ data3 = np.random.rand(len(time_values), len(level_values), len(lat_values), len
 result_ds_without_level = nc_create(level=level_values,time=time_values, lat=lat_values,
                                     lon=lon_values, data=[data2,data3],varname=['rh','t'])
 
-print('first')
+print('first1')
