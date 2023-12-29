@@ -80,12 +80,6 @@ def nc_create(lat,lon,data,varname,level=None,time=None):
     return new_ds
 
 
-# 示例
-time_array = np.array(['2023010100', '2023010200'])
-
-time_array2 = np.array(['2023010100', '2023010200'], dtype='datetime64[h]')
-
-
 def time_change(time):
     iso_format_str_list = []
     # 将输入字符串解析为 datetime 对象
@@ -99,19 +93,4 @@ def time_change(time):
             print('请输入YYYYMMDDHH格式数据')
     return iso_format_str_list
 
-# 示例数据
-lat_values = np.arange(1, 10, 1)
-lon_values = np.arange(1, 10, 1)
-level_values = np.arange(1, 10, 1)
-time_values = np.arange(0, 10, 1)
-data1 = np.random.rand(len(level_values), len(lat_values), len(lon_values))
-data2 = np.random.rand(len(time_values), len(level_values), len(lat_values), len(lon_values))
-data3 = np.random.rand(len(time_values), len(level_values), len(lat_values), len(lon_values))
 
-# 调用函数，不传入 level
-#result_ds_without_level = nc_create(level=level_values, lat=lat_values, lon=lon_values, data_list=[data1])
-
-result_ds_without_level = nc_create(level=level_values,time=time_values, lat=lat_values,
-                                    lon=lon_values, data=[data2,data3],varname=['rh','t'])
-
-print('first2')
